@@ -1,24 +1,143 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/*Header Section*/
+
+.quiz-header {
+  padding: 4rem;
 }
 
-html {
-  font-size: 62.5%;
-  background: #071b45 url("./326-13-blue-binary-tech.jpg") no-repeat center
-    fixed;
-  background-size: cover;
+/*main section*/
+
+input {
+  padding: 1rem;
+  
 }
 
-body {
-  font-family: "Roboto", sans-serif;
+ul {
+  list-style: upper-alpha;
+  margin: 0 auto 4rem 4rem;
+}
+
+ul li {
+  margin: 1rem 0 2rem 0;
+}
+
+ul li label,
+input,
+button {
+  cursor: pointer;
+}
+
+/*All Buttons */
+button {
+  background-color: #1c4cdb;
+  color: whitesmoke;
+  margin: 1rem;
+  border: none;
+  display: block;
+  width: 97%;
+  font-family: inherit;
   font-size: 1.8rem;
-  align-items: center;
-  justify-content: center;
-  height: 60vh;
-  width: 100vw;
-  overflow: hidden;
-  margin: 2rem;
+  padding: 1rem;
+  border-radius: 12px;
+  list-style: none;
 }
 
+button:hover {
+  background-color: #3a5ec9;
+}
+
+button:focus {
+  outline: none;
+  background-color: rebeccapurple;
+}
+
+#highBtn,
+#newBtn {
+  width: 15rem;
+}
+
+.quiz-card,
+.quiz-card-inner,
+.quiz-card-back,
+.quiz-card-front  {
+  height: 40rem;
+  width: 60rem;
+  border-radius: 12px;
+}
+
+.quiz-card {
+  margin: 8rem 25rem 2rem;
+  background-color: transparent;
+  }
+
+.quiz-card-front {
+  padding: 0 4rem;
+  text-align: center;
+}
+
+.quiz-card-front h1 {
+  font-size: 5rem;
+  color:#5ea3f3;
+  margin: 2rem auto;
+}
+
+.quiz-card-front p {
+  margin: 0 auto 2rem auto;
+  color: #b5cfed;
+  
+  
+}
+
+.quiz-card img {
+  height: 12rem;
+  width: 12rem;
+  margin: 0 39%;
+}
+
+.quiz-card-inner {
+  position: relative;
+  text-align: left;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(10, 10, 10, 0.589);
+  margin-bottom: 2rem;
+}
+
+.quiz-card-front,
+.quiz-card-back {
+  position: absolute;
+   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgb(68, 69, 172);
+}
+
+.quiz-card-front {
+  background-color: #052424;
+}
+
+.quiz-card-back {
+  background-color: #164564;
+  transform: rotateY(180deg);
+}
+
+#question {
+  font-size: 2.2rem;
+  color: #fefa06;
+  height: 8rem;
+  padding: 1 rem;
+  text-align: center;
+}
+.result-container {
+  text-align: center;
+  padding: 3rem;
+  height: 10rem;
+  width: 60rem;
+  background-color: #164564;
+  border-radius: 12px;
+  border: 1px solid rgb(68, 69, 172);
+  font-size: 2rem;
+  color: #b5cfed;
+}
+
+#finalScore {
+  font-size: 2rem;
+}

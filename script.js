@@ -7,7 +7,7 @@ var codeQuizData = [
     b: "Data types",
     c: "Declaration statements",
     d: "Prototypes",
-    correct: "#",
+    correct: "c",
   },
   {
     //two
@@ -105,3 +105,15 @@ var submitBtn = document.getElementById("submit_Btn");
 var currentQuiz = 0;
 var score = 0;
 
+document.getElementById("startQuiz").onclick = function changeContent() {
+  document.getElementById("flipMain").style.transform = "rotatey(180deg)";
+  document.getElementById("flipInner").style.transform = "rotatey(180deg)";
+  document.getElementById("quizHeader").style.transform = "rotatey(180deg)";
+  document.getElementById("results").style.transform = "rotatey(180deg)";
+};
+
+codeQuizLoad();
+
+function codeQuizLoad() {
+
+}
