@@ -17,7 +17,7 @@
 
 <header>
   <button class="btn-newGame" id="newBtn" onclick="location.reload()">New Game</button>
-  <button class="btn-highscores" id="highBtn" onclick="">High Scores</button>
+  <button class="btn-highscores" id="highBtn" >High Scores</button>
 </header>
 
 <body>
@@ -55,53 +55,42 @@
               <label for="c" id="answerD">Fourth Question</label>
             </li>
           </ul>
-
-          <button class="submitBtn" id="submit_Btn">Submit</button>
+                  <button class="submitBtn" id="submit_Btn">Submit</button>
         </article>
       </div>
 
     </div>
     <article class="result-container" id="results">
-      <h2 id="finalScore">Practice Makes Perfect!</h2>
-
+      <p id="finalScore">You Have 20 Seconds per question, <br>but you will lose 10 Seconds per wrong answer.  Good Luck!</p>
+      <div class="tickTimer" id="timer">Time Remaining:</div>
     </article>
     <article class="highScores" id="highScoreTable">
       <h1>Code Quiz Highscore </h1>
-
-      <label for="player-name">Please Enter Your Name </label>
-      <input type="player-name" name="player-name" id="playerName" placeholder="Your name" />
-
-
+      <div class="inputName_Container">
+        <label for="player-name">Enter Your Name: </label>
+        <input type="player-name" name="player-name" id="playerName" placeholder="Your name" />
+        <button id="enterScore"> Submit </button>
+      </div>
       <div id="questionsDiv">
 
         <table class="highScoreTable" id="highScore">
           <tr>
             <td>First cell </td>
-            <td>Second cell </td>
           </tr>
           <tr>
             <td>First cell </td>
-            <td>Second cell </td>
           </tr>
           <tr>
             <td>First cell </td>
-            <td>Second cell </td>
           </tr>
           <tr>
             <td>First cell </td>
-            <td>Second cell </td>
           </tr>
           <tr>
             <td>First cell </td>
-            <td>Second cel </td>
           </tr>
           <tr>
             <td>First cell </td>
-            <td>Second cell </td>
-          </tr>
-          <tr>
-            <td>First cell </td>
-            <td>Second cell </td>
           </tr>
         </table>
         <button id="resetHigh" value="reset">Reset Highscores</button>

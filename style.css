@@ -140,21 +140,36 @@ button:focus {
   border: 1px solid rgb(68, 69, 172);
   color: #b5cfed;
   margin-bottom: 2rem;
+ 
 }
-
-#finalScore {
-  font-size: 2rem;
+.result-container{
+  font-size: 1.6rem;
+  padding: 1rem;
+  }
+.tickTimer{
+  color: #fefa06;
 }
-
 #playerName{
  border: 1px solid rgb(68, 69, 172);
+ margin: 0 1rem;
+ height: 4rem;
+}
+#enterScore{
+border: 1px solid rgb(68, 69, 172);
+width: 12rem;
+height:4rem;
+}
+.inputName_Container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .highScores {
 height: 40rem;
   width: 60rem;
   border-radius: 12px;
   text-align: center;
-
+display:none;
 }
 
 .highScores h1{

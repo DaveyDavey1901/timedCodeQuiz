@@ -1,4 +1,3 @@
-
 var codeQuizData = [
   {
     //one
@@ -94,7 +93,6 @@ var codeQuizData = [
 //-------------------------------------------------------------//
 // setting the required variables for the quiz                 //
 var quiz = document.getElementById("quiz");
-var timer = document.querySelector("#timer"); 
 var questionElements = document.getElementById("question");
 var answerElements = document.querySelectorAll(".answer");
 var answerA = document.getElementById("answerA");
@@ -102,9 +100,19 @@ var answerB = document.getElementById("answerB");
 var answerC = document.getElementById("answerC");
 var answerD = document.getElementById("answerD");
 var submitBtn = document.getElementById("submit_Btn");
+var flipMain = document.getElementById("flipMain");
+var toHighScore = document.getElementById("highScoreTable")
 
 var currentQuiz = 0;
 var score = 0;
+var timer = 100;
+
+
+document.getElementById("highBtn").onclick = function changeContent() {
+  document.getElementById("highScoreTable").style.display = "block";
+  toHighScore.scrollIntoView()
+};
+
 //----------------------------------------------------------------//
 //when the cards flips the writing also flips backwards these transforms turn them back
 document.getElementById("startQuiz").onclick = function changeContent() {
@@ -113,10 +121,32 @@ document.getElementById("startQuiz").onclick = function changeContent() {
   document.getElementById("quizHeader").style.transform = "rotatey(180deg)";
   document.getElementById("results").style.transform = "rotatey(180deg)";
   document.getElementById("highScoreTable").style.transform = "rotatey(180deg)";
+  setTime(); 
 };
+
+//------------------------------------------------------------------------------//
+//function for the timer, starts at 200 decreasing by 1, game over at 0         //
+//at the start of the game this function makes sure certain elements are hidden //
+// displays your score at the end                                               //
+function setTime() {
+  var timerinterval = setInterval(function () {
+    document.getElementById("timer").innerHTML = timer;
+    timer--;
+    if (timer === 0 || currentQuiz === codeQuizData.length) {
+      clearInterval(timerinterval);
+      quiz.style.display = "none";
+      flipInner.style.display = "none";
+      highScoreTable.style.display = "block";
+      document.getElementById(
+        "timer"
+      ).innerHTML = `You managed ${score} / ${codeQuizData.length} questions
+      with a finish time of ${timer} seconds  `;
+       }
+  }, 1000);
+}
+
 //----------------------------------------------------------------//
 // initally the when function is called in get the quiz data -----//
-codeQuizLoad();
 
 function codeQuizLoad() {
   deselectAnswers();
@@ -128,7 +158,9 @@ function codeQuizLoad() {
   answerB.innerText = currentQuizData.b;
   answerC.innerText = currentQuizData.c;
   answerD.innerText = currentQuizData.d;
+  
 }
+
 //-------------------------------------------------------------||
 //delselects all answers at the start of new quiz
 function deselectAnswers() {
@@ -146,3 +178,29 @@ function getSelected() {
   });
   return answer;
 }
+//---------------------------------------------------------------------------||
+//submits the answer.  checks if answer is correct if it is adds to the score||
+//after its checks the answer it also moves then moves to the next question or||
+//checks the current quiz and if it has asked all questions goes back to start||
+submitBtn.addEventListener("click", () => {
+  var answer = getSelected();
+
+  if (answer) {
+    if (answer === codeQuizData[currentQuiz].correct) {
+      score++;
+    } else {  timer = timer - 10;
+  
+    currentQuiz++;
+}
+    if (currentQuiz < codeQuizData.length) {
+      codeQuizLoad();
+    } else {
+      
+      quiz.innerHTML = `<p> </p>`;
+    }
+  }
+});
+
+
+//---------------------------------------------------------------------//
+//highscore / current score submit
