@@ -12,60 +12,104 @@
     rel="stylesheet">
   <title>Time Code Quiz</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <link rel="stylesheet" type="text/css" href="general.css"/>
+  <link rel="stylesheet" type="text/css" href="general.css" />
 </head>
 
 <header>
-    <button class="btn-newGame" id="newBtn" onclick="location.reload()">New Game</button>
-    <button class="btn-highscores" id="highBtn" onclick="">High Scores</button>
+  <button class="btn-newGame" id="newBtn" onclick="location.reload()">New Game</button>
+  <button class="btn-highscores" id="highBtn" onclick="">High Scores</button>
 </header>
 
 <body>
-  
-    <article class="quiz-card " id="flipMain">
-      <div class="quiz-card-inner" id="flipInner">
 
-        <article class="quiz-card-front">
-          <h1>Timed Code Quiz</h1>
-          <p>This code quiz is comprised of 20 multiple choice questions. Can you
-            answer them all before the time runs
-            out?</p>
-          <img src="./alarm-clock.png" class="quizMain_Img" alt="#" />
-          <button id="startQuiz"> Start Quiz</button>
-        </article>
+  <article class="quiz-card " id="flipMain">
+    <div class="quiz-card-inner" id="flipInner">
 
-        <div class="quiz-card-back" id="quiz">
-          <article class="quiz-header" id="quizHeader">
-            <h2 id="question">Question text</h2>
-            <ul>
-              <li>
-                <input type="radio" name="answer" id="a" class="answer">
-                <label for="a" id="answerA">First Question</label>
-              </li>
-              <li>
-                <input type="radio" name="answer" id="b" class="answer">
-                <label for="b" id="answerB">Second Question</label>
-              </li>
-              <li>
-                <input type="radio" name="answer" id="c" class="answer">
-                <label for="c" id="answerC">Third Question</label>
-              </li>
-              <li>
-                <input type="radio" name="answer" id="d" class="answer">
-                <label for="c" id="answerD">Fourth Question</label>
-              </li>
-            </ul>
-
-            <button class="submitBtn" id="submit_Btn">Submit</button>
-          </article>
-        </div>
-
-      </div>
-      <article class="result-container" id="results">
-        <h2 id="finalScore">Practice Makes Perfect!</h2>
+      <article class="quiz-card-front">
+        <h1>Timed Code Quiz</h1>
+        <p>This code quiz is comprised of 20 multiple choice questions. Can you
+          answer them all before the time runs
+          out?</p>
+        <img src="./alarm-clock.png" class="quizMain_Img" alt="#" />
+        <button id="startQuiz"> Start Quiz</button>
       </article>
 
+      <div class="quiz-card-back" id="quiz">
+        <article class="quiz-header" id="quizHeader">
+          <h2 id="question">Question text</h2>
+          <ul>
+            <li>
+              <input type="radio" name="answer" id="a" class="answer">
+              <label for="a" id="answerA">First Question</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="b" class="answer">
+              <label for="b" id="answerB">Second Question</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="c" class="answer">
+              <label for="c" id="answerC">Third Question</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="d" class="answer">
+              <label for="c" id="answerD">Fourth Question</label>
+            </li>
+          </ul>
+
+          <button class="submitBtn" id="submit_Btn">Submit</button>
+        </article>
+      </div>
+
+    </div>
+    <article class="result-container" id="results">
+      <h2 id="finalScore">Practice Makes Perfect!</h2>
+
     </article>
+    <article class="highScores">
+      <h1>Code Quiz Highscore </h1>
+
+      <label for="player-name">Please Enter Your Name </label>
+      <input type="player-name" name="player-name" id="playerName" placeholder="Your name" />
+
+
+      <div id="questionsDiv">
+
+        <table class="highScoreTable" id="highScore">
+          <tr>
+            <td>First cell </td>
+            <td>Second cell </td>
+          </tr>
+          <tr>
+            <td>First cell </td>
+            <td>Second cell </td>
+          </tr>
+          <tr>
+            <td>First cell </td>
+            <td>Second cell </td>
+          </tr>
+          <tr>
+            <td>First cell </td>
+            <td>Second cell </td>
+          </tr>
+          <tr>
+            <td>First cell </td>
+            <td>Second cel </td>
+          </tr>
+          <tr>
+            <td>First cell </td>
+            <td>Second cell </td>
+          </tr>
+          <tr>
+            <td>First cell </td>
+            <td>Second cell </td>
+          </tr>
+        </table>
+        <button id="resetHigh" value="reset">Reset Highscores</button>
+      </div>
+    </article>
+  </article>
+
+
 
   <script src="./script.js"></script>
 </body>

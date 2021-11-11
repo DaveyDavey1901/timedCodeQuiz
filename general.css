@@ -51,6 +51,12 @@ Default: 9px 12px;
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem #5ea4f3ea;
+  border-radius: 9px;
+}
+
 html {
   font-size: 62.5%;
   background: #071b45 url("./326-13-blue-binary-tech.jpg") no-repeat center
@@ -65,7 +71,6 @@ body {
   font-size: 1.8rem;
   height: 100vh;
   width: auto;
-  overflow: hidden;
   scroll-behavior: smooth;
   margin: 2rem;
   color: white;
