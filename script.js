@@ -2,7 +2,7 @@
 var codeQuizData = [
   {
     //one
-    question: "The function and var are known as:",
+    question: "1. The function and var are known as:",
     a: "Keywords",
     b: "Data types",
     c: "Declaration statements",
@@ -11,92 +11,92 @@ var codeQuizData = [
   },
   {
     //two
-    question: "#",
-    a: "#",
-    b: "#",
-    c: "#",
-    d: "#",
-    correct: "#",
+    question: "2. Which of the following is not JavaScript Data Types?",
+    a: "Undefined",
+    b: "Number",
+    c: "Boolean",
+    d: "Float",
+    correct: "d",
   },
   {
     //three
-    question: "#",
-    a: "#",
-    b: "#",
-    c: "#",
-    d: "#",
-    correct: "#",
+    question: "3. Which company developed JavaScript?",
+    a: "Netscape",
+    b: "Bell Labs",
+    c: "Sun Microsystems",
+    d: "IBM",
+    correct: "a",
   },
   {
     //four
-    question: "#",
-    a: "#",
-    b: "#",
-    c: "#",
-    d: "#",
-    correct: "#",
+    question: "4. Inside which HTML element do we put the JavaScript?",
+    a: "<script>",
+    b: "<head>",
+    c: "<meta>",
+    d: "<style>",
+    correct: "a",
   },
   {
     //five
-    question: "#",
-    a: "#",
-    b: "#",
-    c: "#",
-    d: "#",
-    correct: "#",
+    question: "5. which of the following are advantages of JavaScript?",
+    a: "Less server interaction",
+    b: "Increased interactivity",
+    c: "Richer interfaces",
+    d: "All of the above",
+    correct: "d",
   },
   {
     //six
-    question: "#",
-    a: "#",
-    b: "#",
-    c: "#",
-    d: "#",
-    correct: "#",
+    question: "6. JavaScript ignores?",
+    a: "spaces",
+    b: "tabs",
+    c: "newlines",
+    d: "All of the above",
+    correct: "d",
   },
   {
     //seven
-    question: "#",
-    a: "#",
-    b: "#",
-    c: "#",
-    d: "#",
-    correct: "#",
+    question: "7. JavaScript is designed for following purpose?",
+    a: "to style HTML pages",
+    b: "to execute Queries related to databases on a server",
+    c: "to add interactivity to html pages",
+    d: "All of the above",
+    correct: "d",
   },
   {
     //eight
-    question: "#",
-    a: "#",
-    b: "#",
-    c: "#",
-    d: "#",
-    correct: "#",
+    question: "8. What is the default value of the asyc attribute?",
+    a: "0",
+    b: "1",
+    c: "False",
+    d: "True",
+    correct: "d",
   },
   {
     //nine
-    question: "#",
-    a: "#",
-    b: "#",
-    c: "#",
-    d: "#",
-    correct: "#",
+    question: "9. Javascript is ideal to?",
+    a: "make computations in HTML simpler",
+    b: "minimize storage requirements on the web server",
+    c: "increase the download time for the client",
+    d: "none of the mentioned",
+    correct: "b",
   },
   {
     //ten
-    question: "#",
-    a: "#",
-    b: "#",
-    c: "#",
-    d: "#",
-    correct: "#",
+    question: "10. What is the purpose of script loading?",
+    a: "Load Scripts programmatically",
+    b: "Load JavaScript files manually",
+    c: "Load JavaScript files programmatically",
+    d: "All of the mentioned",
+    correct: "c",
   },
 ];
 //-------------------------------------------------------------//
 // setting the required variables for the quiz                 //
 var quiz = document.getElementById("quiz");
 var timer = document.querySelector("#timer"); 
-var answerElements = document.querySelectorAll(".answer");
 var questionElements = document.getElementById("question");
+var answerElements = document.querySelectorAll(".answer");
 var answerA = document.getElementById("answerA");
 var answerB = document.getElementById("answerB");
 var answerC = document.getElementById("answerC");
@@ -146,4 +146,3 @@ function getSelected() {
   });
   return answer;
 }
-//-------------------------------------------------------------||
