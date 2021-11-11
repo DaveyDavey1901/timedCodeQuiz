@@ -101,16 +101,16 @@ var answerC = document.getElementById("answerC");
 var answerD = document.getElementById("answerD");
 var submitBtn = document.getElementById("submit_Btn");
 var flipMain = document.getElementById("flipMain");
-var toHighScore = document.getElementById("highScoreTable")
+var toHighScore = document.getElementById("highScoreTable");
 
 var currentQuiz = 0;
 var score = 0;
 var timer = 100;
 
-
+codeQuizLoad();
 document.getElementById("highBtn").onclick = function changeContent() {
   document.getElementById("highScoreTable").style.display = "block";
-  toHighScore.scrollIntoView()
+  toHighScore.scrollIntoView();
 };
 
 //----------------------------------------------------------------//
@@ -121,7 +121,7 @@ document.getElementById("startQuiz").onclick = function changeContent() {
   document.getElementById("quizHeader").style.transform = "rotatey(180deg)";
   document.getElementById("results").style.transform = "rotatey(180deg)";
   document.getElementById("highScoreTable").style.transform = "rotatey(180deg)";
-  setTime(); 
+  setTime();
 };
 
 //------------------------------------------------------------------------------//
@@ -141,7 +141,7 @@ function setTime() {
         "timer"
       ).innerHTML = `You managed ${score} / ${codeQuizData.length} questions
       with a finish time of ${timer} seconds  `;
-       }
+    }
   }, 1000);
 }
 
@@ -158,7 +158,6 @@ function codeQuizLoad() {
   answerB.innerText = currentQuizData.b;
   answerC.innerText = currentQuizData.c;
   answerD.innerText = currentQuizData.d;
-  
 }
 
 //-------------------------------------------------------------||
@@ -188,19 +187,18 @@ submitBtn.addEventListener("click", () => {
   if (answer) {
     if (answer === codeQuizData[currentQuiz].correct) {
       score++;
-    } else {  timer = timer - 10;
-  
+    } else {
+      timer = timer - 10;
+    }
     currentQuiz++;
-}
+
     if (currentQuiz < codeQuizData.length) {
       codeQuizLoad();
     } else {
-      
       quiz.innerHTML = `<p> </p>`;
     }
   }
 });
-
 
 //---------------------------------------------------------------------//
 //highscore / current score submit
