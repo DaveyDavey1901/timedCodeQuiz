@@ -26,7 +26,7 @@ var codeQuizData = [
     d: "IBM",
     correct: "a",
   },
-  {
+  /*{
     //four
     question: "4. Inside which HTML element do we put the JavaScript?",
     a: "<script>",
@@ -88,7 +88,7 @@ var codeQuizData = [
     c: "Load JavaScript files programmatically",
     d: "All of the mentioned",
     correct: "c",
-  },
+  },*/
 ];
 //-------------------------------------------------------------//
 // setting the required variables for the quiz                 //
@@ -103,9 +103,11 @@ var submitBtn = document.getElementById("submit_Btn");
 var flipMain = document.getElementById("flipMain");
 var toHighScore = document.getElementById("highScoreTable");
 
+
 var currentQuiz = 0;
 var score = 0;
 var timer = 100;
+v
 
 codeQuizLoad();
 document.getElementById("highBtn").onclick = function changeContent() {
@@ -191,8 +193,10 @@ submitBtn.addEventListener("click", () => {
       timer = timer - 10;
     }
     currentQuiz++;
-
+    console.log(timer);
+   
     if (currentQuiz < codeQuizData.length) {
+      finalScore = timer;
       codeQuizLoad();
     } else {
       quiz.innerHTML = `<p> </p>`;
@@ -201,4 +205,4 @@ submitBtn.addEventListener("click", () => {
 });
 
 //---------------------------------------------------------------------//
-//highscore / current score submit
+
