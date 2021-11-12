@@ -26,7 +26,7 @@ var codeQuizData = [
     d: "IBM",
     correct: "a",
   },
-  /*{
+  {
     //four
     question: "4. Inside which HTML element do we put the JavaScript?",
     a: "<script>",
@@ -88,7 +88,7 @@ var codeQuizData = [
     c: "Load JavaScript files programmatically",
     d: "All of the mentioned",
     correct: "c",
-  },*/
+  },
 ];
 //-------------------------------------------------------------//
 // setting the required variables for the quiz                 //
@@ -101,18 +101,16 @@ var answerC = document.getElementById("answerC");
 var answerD = document.getElementById("answerD");
 var submitBtn = document.getElementById("submit_Btn");
 var flipMain = document.getElementById("flipMain");
-var toHighScore = document.getElementById("highScoreTable");
-
+var toHighScore = document.getElementById("highScoreTable")
 
 var currentQuiz = 0;
 var score = 0;
 var timer = 100;
-v
 
-codeQuizLoad();
+
 document.getElementById("highBtn").onclick = function changeContent() {
   document.getElementById("highScoreTable").style.display = "block";
-  toHighScore.scrollIntoView();
+  toHighScore.scrollIntoView()
 };
 
 //----------------------------------------------------------------//
@@ -123,7 +121,7 @@ document.getElementById("startQuiz").onclick = function changeContent() {
   document.getElementById("quizHeader").style.transform = "rotatey(180deg)";
   document.getElementById("results").style.transform = "rotatey(180deg)";
   document.getElementById("highScoreTable").style.transform = "rotatey(180deg)";
-  setTime();
+  setTime(); 
 };
 
 //------------------------------------------------------------------------------//
@@ -143,10 +141,10 @@ function setTime() {
         "timer"
       ).innerHTML = `You managed ${score} / ${codeQuizData.length} questions
       with a finish time of ${timer} seconds  `;
-    }
+       }
   }, 1000);
 }
-
+codeQuizLoad();
 //----------------------------------------------------------------//
 // initally the when function is called in get the quiz data -----//
 
@@ -160,6 +158,7 @@ function codeQuizLoad() {
   answerB.innerText = currentQuizData.b;
   answerC.innerText = currentQuizData.c;
   answerD.innerText = currentQuizData.d;
+  
 }
 
 //-------------------------------------------------------------||
@@ -189,20 +188,19 @@ submitBtn.addEventListener("click", () => {
   if (answer) {
     if (answer === codeQuizData[currentQuiz].correct) {
       score++;
-    } else {
-      timer = timer - 10;
-    }
+    } else {  timer = timer - 10;
+  }
     currentQuiz++;
-    console.log(timer);
-   
+
     if (currentQuiz < codeQuizData.length) {
-      finalScore = timer;
       codeQuizLoad();
     } else {
+      
       quiz.innerHTML = `<p> </p>`;
     }
   }
 });
 
-//---------------------------------------------------------------------//
 
+//---------------------------------------------------------------------//
+//highscore / current score submit
