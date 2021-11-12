@@ -17,7 +17,7 @@ var codeQuizData = [
     d: "Float",
     correct: "d",
   },
-  {
+  /*{
     //three
     question: "3. Which company developed JavaScript?",
     a: "Netscape",
@@ -88,7 +88,7 @@ var codeQuizData = [
     c: "Load JavaScript files programmatically",
     d: "All of the mentioned",
     correct: "c",
-  },
+  },*/
 ];
 //-------------------------------------------------------------//
 // setting the required variables for the quiz                 //
@@ -106,7 +106,6 @@ var toHighScore = document.getElementById("highScoreTable")
 var currentQuiz = 0;
 var score = 0;
 var timer = 100;
-
 
 document.getElementById("highBtn").onclick = function changeContent() {
   document.getElementById("highScoreTable").style.display = "block";
@@ -139,8 +138,8 @@ function setTime() {
       highScoreTable.style.display = "block";
       document.getElementById(
         "timer"
-      ).innerHTML = `You managed ${score} / ${codeQuizData.length} questions
-      with a finish time of ${timer} seconds  `;
+      ).innerHTML = `You got ${score} / ${codeQuizData.length} questions
+      correct with a finish time of ${timer} seconds  `;
        }
   }, 1000);
 }
@@ -204,3 +203,31 @@ submitBtn.addEventListener("click", () => {
 
 //---------------------------------------------------------------------//
 //highscore / current score submit
+
+var highScores = []
+
+
+enterScore.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  var finalScores = {
+    userName: playerName.value,
+    score,
+    timer,
+  };
+  
+  var newscore = JSON.stringify(finalScores);
+  localStorage.setItem("finalScores", newscore);
+   saveHighscore();
+});
+
+function saveHighscore() {
+  var newHigh = JSON.parse(localStorage.getItem("finalScores")) || [];
+  if (newHigh !== null) {
+    document.querySelector(
+      ".highscore"
+    ).textContent = `${newHigh.userName} ${newHigh.score} /10 Questions in ${newHigh.timer} Seconds`;
+  }
+  highScores.push(newHigh);
+  console.log(highScores);
+}
