@@ -154,7 +154,7 @@ button:focus {
  margin: 0 1rem;
  height: 4rem;
 }
-#enterScore{
+#submitScore{
 border: 1px solid rgb(68, 69, 172);
 width: 12rem;
 height:4rem;

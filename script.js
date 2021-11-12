@@ -201,33 +201,53 @@ submitBtn.addEventListener("click", () => {
 });
 
 
+
 //---------------------------------------------------------------------//
 //highscore / current score submit
 
-var highScores = []
+var highScores = checkForStoredScores(); 
 
-
-enterScore.addEventListener("click", function (event) {
+submitScore.addEventListener("click", function (event) {
   event.preventDefault();
 
-  var finalScores = {
+  var finalScore = {
     userName: playerName.value,
     score,
     timer,
-  };
-  
-  var newscore = JSON.stringify(finalScores);
-  localStorage.setItem("finalScores", newscore);
-   saveHighscore();
+  }; 
+   saveHighscore(finalScore); 
+   displayScore(finalScore);
 });
 
-function saveHighscore() {
-  var newHigh = JSON.parse(localStorage.getItem("finalScores")) || [];
-  if (newHigh !== null) {
-    document.querySelector(
-      ".highscore"
-    ).textContent = `${newHigh.userName} ${newHigh.score} /10 Questions in ${newHigh.timer} Seconds`;
+function saveHighscore(finalScore) {
+  // check to see if highscores is empty if it is create a
+  if(highScores === null){
+    highScores = [];
   }
-  highScores.push(newHigh);
+  
+  highScores.push(finalScore);
+  // save high scores back to local storage
+  localStorage.setItem("highScores", JSON.stringify(highScores)); 
+
   console.log(highScores);
 }
+
+function displayScore(finalScore){
+if (finalScore !== null) {
+    document.querySelector(
+      ".highscore"
+    ).textContent = `${finalScore.userName} ${finalScore.score} /10 Questions in ${finalScore.timer} Seconds`;
+  }
+}
+
+
+function  checkForStoredScores() {
+    // try get high scores from local storage
+    var storedScores = localStorage.getItem("highScores"); 
+    if(storedScores !== undefined){
+        //if something in local storage set the highscore to it
+           return JSON.parse(storedScores);
+          }
+    
+}
+
