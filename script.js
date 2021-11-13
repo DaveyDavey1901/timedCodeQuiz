@@ -8,7 +8,7 @@ var codeQuizData = [
     d: "Prototypes",
     correct: "c",
   },
-  {
+  /*{
     //two
     question: "2. Which of the following is not JavaScript Data Types?",
     a: "Undefined",
@@ -17,7 +17,7 @@ var codeQuizData = [
     d: "Float",
     correct: "d",
   },
-  /*{
+  {
     //three
     question: "3. Which company developed JavaScript?",
     a: "Netscape",
@@ -110,6 +110,7 @@ var timer = 100;
 document.getElementById("highBtn").onclick = function changeContent() {
   document.getElementById("highScoreTable").style.display = "block";
   toHighScore.scrollIntoView()
+   displayScore();
 };
 
 //----------------------------------------------------------------//
@@ -207,41 +208,8 @@ submitBtn.addEventListener("click", () => {
 
 var highScores = checkForStoredScores(); 
 
-submitScore.addEventListener("click", function (event) {
-  event.preventDefault();
-
-  var finalScore = {
-    userName: playerName.value,
-    score,
-    timer,
-  }; 
-   saveHighscore(finalScore); 
-   displayScore(finalScore);
-});
-
-function saveHighscore(finalScore) {
-  // check to see if highscores is empty if it is create a
-  if(highScores === null){
-    highScores = [];
-  }
-  
-  highScores.push(finalScore);
-  // save high scores back to local storage
-  localStorage.setItem("highScores", JSON.stringify(highScores)); 
-
-  console.log(highScores);
-}
-
-function displayScore(finalScore){
-if (finalScore !== null) {
-    document.querySelector(
-      ".highscore"
-    ).textContent = `${finalScore.userName} ${finalScore.score} /10 Questions in ${finalScore.timer} Seconds`;
-  }
-}
-
-
-function  checkForStoredScores() {
+function  checkForStoredScores() 
+{
     // try get high scores from local storage
     var storedScores = localStorage.getItem("highScores"); 
     if(storedScores !== undefined){
@@ -251,3 +219,52 @@ function  checkForStoredScores() {
     
 }
 
+console.log('created', highScores);
+
+submitScore.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  var finalScore = {
+    userName: playerName.value,
+    score,
+    timer,
+  }; 
+   saveHighscore(finalScore); 
+   displayScore();
+});
+
+function saveHighscore(finalScore) {
+  // check to see if highscores is null
+  if(highScores === null){
+    highScores = [];
+  }
+  
+  highScores.push(finalScore);
+
+// inline function will sort array descending by score
+  highScores =  highScores.sort(function(a,b){return b.score- a.score});
+  if(highScores.length > 5)
+  {
+    highScores = highScores.splice(0,5);
+  }
+  // save high scores back to local storage
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+
+ 
+  console.log(highScores);
+}
+
+function displayScore(){  
+  var tbody = document.getElementById("highScore");
+  for(let i = 0; i< highScores.length; i++){
+     var row = document.createElement('tr')
+    var cell = document.createElement('td')      
+    cell.textContent = `${highScores[i].userName} ${highScores[i].score} /10 Questions in ${highScores[i].timer} Seconds`; 
+         row.appendChild(cell);
+         tbody.appendChild(row);
+}}
+
+function deleteItems() {
+  localStorage.clear();
+  location.reload();
+  }
