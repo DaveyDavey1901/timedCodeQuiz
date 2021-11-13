@@ -18,6 +18,7 @@
 has the quiz details as well as the start button*/
 .quiz-card-front {
   padding: 0 4rem;
+  margin:  auto;
 }
 
 .quiz-card-front h1 {
