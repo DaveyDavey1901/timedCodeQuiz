@@ -27,10 +27,16 @@ Primary Colours to be used or shades of
 
 //---STYLES USED---//
 
+  
+   
+
+
+
 01 Colors and shades used 
-Text 
-Background  
-Border 
+Text  #fff, #5ea3f3, #fefa06, #b5cfed
+Background  #071b45,#1c4cdb,#663399,#164564,#052424
+Border #4445ac
+shadow #5ea4f3ea, rgba(10, 10, 10, 0.589)
 
 02 SHADOWS
 
@@ -73,12 +79,39 @@ body {
   width: auto;
   scroll-behavior: smooth;
   margin: 2rem;
-  color: white;
+  color: #fff;
 }
 
 /*reusable borders*/
 
 .bdr1 {
-  border: 1px solid rgb(68, 69, 172);
+  border: 1px solid #4445ac;
   border-radius: 12px;
 }
+
+/*All Buttons */
+button {
+  background-color: #1c4cdb;
+  color: #fff;
+  margin: 1rem;
+  border: none;
+  display: block;
+  width: 97%;
+  font-family: inherit;
+  font-size: 1.8rem;
+  padding: 1rem;
+  border-radius: 12px;
+  list-style: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3a5ec9;
+}
+
+button:focus {
+  outline: none;
+  background-color: #663399;
+}
+
+ 

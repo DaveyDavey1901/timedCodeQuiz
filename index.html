@@ -16,7 +16,7 @@
 </head>
 
 <header>
-   <button class="btn-highscores" id="highBtn">High Scores</button>
+  <button class="btn-highscores" id="highBtn">High Scores</button>
 </header>
 
 <body>
@@ -29,12 +29,12 @@
         <p>This code quiz is comprised of 10 multiple choice questions. Can you
           answer them all before the time runs
           out?</p>
-        <img src="./alarm-clock.png" class="quizMain_Img" alt="#" />
+        <img src="./alarm-clock.png" class="quizMain_Img" alt="Picture of an alarm clock" />
         <button id="startQuiz"> Start Quiz</button>
       </article>
 
       <div class="quiz-card-back" id="quiz">
-        <article class="quiz-header" id="quizHeader">
+        <article class="quizQuestions" id="questionsQuiz">
           <h2 id="question">Question text</h2>
           <ul>
             <li>
@@ -57,7 +57,6 @@
           <button class="submitBtn" id="submit_Btn">Submit</button>
         </article>
       </div>
-
     </div>
     <article class="result-container" id="results">
       <p id="finalScore">You Have 20 Seconds per question, <br>but you will lose 10 Seconds per wrong answer. Good Luck!
@@ -69,18 +68,18 @@
       <div class="flexContainer">
         <label for="player-name">Save Score: </label>
         <input type="text" name="player-name" id="playerName" placeholder="Name" />
-        <button id="submitScore"> Submit </button>
+        <button class="subScore" id="submitScore"> Submit </button>
       </div>
       <div class="scores_Container">
 
         <table class="highScoreTable" id="highScore"></table>
 
-        
+
       </div>
       <div class="flexContainer">
-          <button class="btn-Reset" id="resetBtn" onclick="deleteItems()">Reset & New Game</button>
-          <button class="btn-newGame" id="newBtn" onclick="location.reload()">New Game</button>
-        </div>
+        <button class="btn-Reset" id="resetBtn" onclick="deleteItems()">Reset & New Game</button>
+        <button class="btn-newGame" id="newBtn" onclick="location.reload()">New Game</button>
+      </div>
     </article>
   </article>
 

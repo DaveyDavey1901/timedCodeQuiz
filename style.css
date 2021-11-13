@@ -1,85 +1,21 @@
-/*Header Section*/
 
-.quiz-header {
-  padding: 4rem;
-}
 
-/*main section*/
-
-input {
-  padding: 1rem;
-}
-
-ul {
-  list-style: upper-alpha;
-  margin: 0 auto 4rem 4rem;
-}
-
-ul li {
-  margin: 1rem 0 2rem 0;
-}
-
-ul li label,
-input,
-button {
-  cursor: pointer;
-}
-
-/*All Buttons */
-button {
-  background-color: #1c4cdb;
-  color: whitesmoke;
-  margin: 1rem;
-  border: none;
-  display: block;
-  width: 97%;
-  font-family: inherit;
-  font-size: 1.8rem;
-  padding: 1rem;
-  border-radius: 12px;
-  list-style: none;
-}
-
-button:hover {
-  background-color: #3a5ec9;
-}
-
-button:focus {
-  outline: none;
-  background-color: rebeccapurple;
-}
-.btn-Reset {
-  width: 20rem;
-}
-
-#highBtn,
-#newBtn {
-  width: 15rem;
-}
-
-#question {
-  font-size: 2.2rem;
-  color: #fefa06;
-  height: 8rem;
-  padding: 1 rem;
-  text-align: center;
-}
-
-.quiz-card,
-.quiz-card-inner,
-.quiz-card-back,
-.quiz-card-front {
-  height: 40rem;
-  width: 60rem;
-  border-radius: 12px;
-  text-align: center;
-}
-
+/*quiz flip card front section*/
 .quiz-card {
   margin: 8rem 25rem 2rem;
   background-color: transparent;
 }
-
+/*quiz flip card inner section */
+.quiz-card-inner {
+  position: relative;
+  text-align: left;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(10, 10, 10, 0.589);
+  margin-bottom: 2rem;
+}
+/*quiz card front section.  This side of the card 
+has the quiz details as well as the start button*/
 .quiz-card-front {
   padding: 0 4rem;
 }
@@ -95,47 +31,77 @@ button:focus {
   color: #b5cfed;
 }
 
-.quiz-card img {
+.quiz-card-front img {
   height: 12rem;
   width: auto;
   margin: 0 39%;
 }
-
-.quiz-card-inner {
-  position: relative;
-  text-align: left;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(10, 10, 10, 0.589);
-  margin-bottom: 2rem;
+/*These styles applies to all sides of the quiz card */
+.quiz-card,
+.quiz-card-inner,
+.quiz-card-back,
+.quiz-card-front {
+  height: 40rem;
+  width: 60rem;
+  border-radius: 12px;
+  text-align: center;
 }
-
 .quiz-card-front,
 .quiz-card-back {
   position: absolute;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border: 1px solid rgb(68, 69, 172);
+  border: 1px solid #4445ac;
 }
 .highScores,
 .result-container,
 .quiz-card-front {
   background-color: #052424;
 }
-
 .quiz-card-back {
   background-color: #164564;
   transform: rotateY(180deg);
   text-align: left;
 }
+/* quiz question styles */
+.quizQuestions {
+  padding: 4rem;
+}
+.quizQuestions h2 {
+  font-size: 2.2rem;
+  color: #fefa06;
+  height: 8rem;
+  padding: 1 rem;
+  text-align: center;
+}
+.quizQuestions input {
+  padding: 1rem;
+}
 
+.quizQuestions ul {
+  list-style: upper-alpha;
+  margin: 0 auto 4rem 4rem;
+}
+
+.quizQuestions ul li {
+  margin: 1rem 0 2rem 0;
+}
+
+.quizQuestions ul li label,
+.quizQuestions input,
+.quizQuestions button {
+  cursor: pointer;
+}
+
+
+/* Highscores card section */
 .highScores,
 .result-container {
   padding: 3rem;
   height: 10rem;
   width: 60rem;
   border-radius: 12px;
-  border: 1px solid rgb(68, 69, 172);
+  border: 1px solid #4445ac;
   color: #b5cfed;
   margin-bottom: 2rem;
 }
@@ -146,20 +112,24 @@ button:focus {
 .tickTimer {
   color: #fefa06;
 }
-#playerName {
-  border: 1px solid rgb(68, 69, 172);
-  margin: 0 1rem;
-  height: 4rem;
-}
-#submitScore {
-  border: 1px solid rgb(68, 69, 172);
+
+.subScore {
+  border: 1px solid #4445ac;
   width: 12rem;
   height: 4rem;
 }
+
 .flexContainer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.flexContainer input{
+  border: 1px solid #4445ac;
+  margin: 0 1rem;
+  height: 4rem;
+  padding-left: 1rem;
 }
 
 .highScores {
@@ -191,11 +161,17 @@ button:focus {
 .highScoreTable,
 .highScoreTable tr,
 .highScoreTable td {
-  border: 1px solid rgb(68, 69, 172);
+  border: 1px solid #4445ac;
   border-collapse: collapse;
 }
 
 .scores_Container {
   height: 15.2rem;
   overflow: hidden;
+}
+
+.btn-highscores,
+.btn-newGame,
+.btn-Reset {
+  width: 20rem;
 }

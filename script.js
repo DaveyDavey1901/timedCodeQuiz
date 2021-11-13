@@ -101,7 +101,7 @@ var answerC = document.getElementById("answerC");
 var answerD = document.getElementById("answerD");
 var submitBtn = document.getElementById("submit_Btn");
 var flipMain = document.getElementById("flipMain");
-var toHighScore = document.getElementById("highScoreTable")
+var toHighScore = document.getElementById("highScoreTable");
 
 var currentQuiz = 0;
 var score = 0;
@@ -109,8 +109,8 @@ var timer = 100;
 
 document.getElementById("highBtn").onclick = function changeContent() {
   document.getElementById("highScoreTable").style.display = "block";
-  toHighScore.scrollIntoView()
-   displayScore();
+  toHighScore.scrollIntoView();
+  displayScore();
 };
 
 //----------------------------------------------------------------//
@@ -118,10 +118,10 @@ document.getElementById("highBtn").onclick = function changeContent() {
 document.getElementById("startQuiz").onclick = function changeContent() {
   document.getElementById("flipMain").style.transform = "rotatey(180deg)";
   document.getElementById("flipInner").style.transform = "rotatey(180deg)";
-  document.getElementById("quizHeader").style.transform = "rotatey(180deg)";
+  document.getElementById("questionsQuiz").style.transform = "rotatey(180deg)";
   document.getElementById("results").style.transform = "rotatey(180deg)";
   document.getElementById("highScoreTable").style.transform = "rotatey(180deg)";
-  setTime(); 
+  setTime();
 };
 
 //------------------------------------------------------------------------------//
@@ -141,7 +141,7 @@ function setTime() {
         "timer"
       ).innerHTML = `You got ${score} / ${codeQuizData.length} questions
       correct with a finish time of ${timer} seconds  `;
-       }
+    }
   }, 1000);
 }
 codeQuizLoad();
@@ -158,7 +158,6 @@ function codeQuizLoad() {
   answerB.innerText = currentQuizData.b;
   answerC.innerText = currentQuizData.c;
   answerD.innerText = currentQuizData.d;
-  
 }
 
 //-------------------------------------------------------------||
@@ -188,38 +187,34 @@ submitBtn.addEventListener("click", () => {
   if (answer) {
     if (answer === codeQuizData[currentQuiz].correct) {
       score++;
-    } else {  timer = timer - 10;
-  }
+    } else {
+      timer = timer - 10;
+    }
     currentQuiz++;
 
     if (currentQuiz < codeQuizData.length) {
       codeQuizLoad();
     } else {
-      
       quiz.innerHTML = `<p> </p>`;
     }
   }
 });
 
-
-
 //---------------------------------------------------------------------//
 //highscore / current score submit
 
-var highScores = checkForStoredScores(); 
+var highScores = checkForStoredScores();
 
-function  checkForStoredScores() 
-{
-    // try get high scores from local storage
-    var storedScores = localStorage.getItem("highScores"); 
-    if(storedScores !== undefined){
-        //if something in local storage set the highscore to it
-           return JSON.parse(storedScores);
-          }
-    
+function checkForStoredScores() {
+  // try get high scores from local storage
+  var storedScores = localStorage.getItem("highScores");
+  if (storedScores !== undefined) {
+    //if something in local storage set the highscore to it
+    return JSON.parse(storedScores);
+  }
 }
 
-console.log('created', highScores);
+console.log("created", highScores);
 
 submitScore.addEventListener("click", function (event) {
   event.preventDefault();
@@ -228,43 +223,46 @@ submitScore.addEventListener("click", function (event) {
     userName: playerName.value,
     score,
     timer,
-  }; 
-   saveHighscore(finalScore); 
-   displayScore();
+  };
+  saveHighscore(finalScore);
+  displayScore();
 });
 
 function saveHighscore(finalScore) {
   // check to see if highscores is null
-  if(highScores === null){
+  if (highScores === null) {
     highScores = [];
   }
-  
+
   highScores.push(finalScore);
 
-// inline function will sort array descending by score
-  highScores =  highScores.sort(function(a,b){return b.score- a.score});
-  if(highScores.length > 5)
-  {
-    highScores = highScores.splice(0,5);
+  // inline function will sort array descending by score
+  highScores = highScores.sort(function (a, b) {
+    return b.score - a.score;
+  });
+  if (highScores.length > 5) {
+    highScores = highScores.splice(0, 5);
   }
   // save high scores back to local storage
   localStorage.setItem("highScores", JSON.stringify(highScores));
 
- 
   console.log(highScores);
 }
-
-function displayScore(){  
+/* displays the score in a newly created table */
+function displayScore() {
+  if (highScores === null)
+    return;
   var tbody = document.getElementById("highScore");
-  for(let i = 0; i< highScores.length; i++){
-     var row = document.createElement('tr')
-    var cell = document.createElement('td')      
-    cell.textContent = `${highScores[i].userName} ${highScores[i].score} /10 Questions in ${highScores[i].timer} Seconds`; 
-         row.appendChild(cell);
-         tbody.appendChild(row);
-}}
-
+  for (let i = 0; i < highScores.length; i++) {
+    var row = document.createElement("tr");
+    var cell = document.createElement("td");
+    cell.textContent = `${highScores[i].userName} ${highScores[i].score} /10 Questions in ${highScores[i].timer} Seconds`;
+    row.appendChild(cell);
+    tbody.appendChild(row);
+  }
+}
+/* clears the local storage and then reloads the page */
 function deleteItems() {
   localStorage.clear();
   location.reload();
-  }
+}
