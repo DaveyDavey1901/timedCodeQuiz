@@ -65,7 +65,7 @@ Default: 9px 12px;
 
 html {
   font-size: 62.5%;
-  background: #071b45 url("/Assets/img/326-13-blue-binary-tech.jpg") no-repeat center
+  background: #071b45 url("../img/326-13-blue-binary-tech.jpg") no-repeat center
     fixed;
   background-size: cover;
 }
