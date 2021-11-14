@@ -8,7 +8,7 @@ var codeQuizData = [
     d: "Prototypes",
     correct: "c",
   },
-  /*{
+  {
     //two
     question: "2. Which of the following is not JavaScript Data Types?",
     a: "Undefined",
@@ -88,7 +88,7 @@ var codeQuizData = [
     c: "Load JavaScript files programmatically",
     d: "All of the mentioned",
     correct: "c",
-  },*/
+  },
 ];
 //-------------------------------------------------------------//
 // setting the required variables for the quiz                 //
