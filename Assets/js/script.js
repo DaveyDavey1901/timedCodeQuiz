@@ -256,7 +256,7 @@ function displayScore() {
   for (let i = 0; i < highScores.length; i++) {
     var row = document.createElement("tr");
     var cell = document.createElement("td");
-    cell.textContent = `${highScores[i].userName} ${highScores[i].score} /10 Questions in ${highScores[i].timer} Seconds`;
+    cell.textContent = `${highScores[i].userName} ${highScores[i].score} /10 Questions with ${highScores[i].timer} Seconds left.`;
     row.appendChild(cell);
     tbody.appendChild(row);
   }
