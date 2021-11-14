@@ -169,6 +169,7 @@ has the quiz details as well as the start button*/
 .highScoreTable td {
   border: 1px solid #4445ac;
   border-collapse: collapse;
+  
 }
 
 .scores_Container {

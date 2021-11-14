@@ -101,14 +101,14 @@ var answerC = document.getElementById("answerC");
 var answerD = document.getElementById("answerD");
 var submitBtn = document.getElementById("submit_Btn");
 var flipMain = document.getElementById("flipMain");
-var toHighScore = document.getElementById("highScoreTable");
+var toHighScore = document.getElementById("highScoreTbl");
 
 var currentQuiz = 0;
 var score = 0;
 var timer = 100;
 
 document.getElementById("highBtn").onclick = function changeContent() {
-  document.getElementById("highScoreTable").style.display = "block";
+  document.getElementById("highScoreTbl").style.display = "block";
   toHighScore.scrollIntoView();
   displayScore();
 };
@@ -120,7 +120,7 @@ document.getElementById("startQuiz").onclick = function changeContent() {
   document.getElementById("flipInner").style.transform = "rotatey(180deg)";
   document.getElementById("questionsQuiz").style.transform = "rotatey(180deg)";
   document.getElementById("results").style.transform = "rotatey(180deg)";
-  document.getElementById("highScoreTable").style.transform = "rotatey(180deg)";
+  document.getElementById("highScoreTbl").style.transform = "rotatey(180deg)";
   setTime();
 };
 
@@ -136,7 +136,7 @@ function setTime() {
       clearInterval(timerinterval);
       quiz.style.display = "none";
       flipInner.style.display = "none";
-      highScoreTable.style.display = "block";
+      highScoreTbl.style.display = "block";
       document.getElementById(
         "timer"
       ).innerHTML = `You got ${score} / ${codeQuizData.length} questions
