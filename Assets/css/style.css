@@ -2,7 +2,7 @@
 
 /*quiz flip card front section*/
 .quiz-card {
-  margin: 8rem 25rem 2rem;
+  margin: 8rem auto 2rem;
   background-color: transparent;
 }
 /*quiz flip card inner section */
@@ -99,7 +99,7 @@ has the quiz details as well as the start button*/
 .highScores,
 .result-container {
   padding: 3rem;
-  height: 10rem;
+  height: 14rem;
   width: 60rem;
   border-radius: 12px;
   border: 1px solid #4445ac;
@@ -110,7 +110,12 @@ has the quiz details as well as the start button*/
   font-size: 1.6rem;
   padding: 1rem;
 }
+.result-container h2 {
+  font-size: 2.4rem;
+  color: #5ea3f3;
+ }
 .tickTimer {
+  font-size: 1.8rem;
   color: #fefa06;
 }
 
