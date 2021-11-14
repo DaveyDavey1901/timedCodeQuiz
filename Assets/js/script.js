@@ -132,7 +132,7 @@ function setTime() {
   var timerinterval = setInterval(function () {
     document.getElementById("timer").innerHTML = timer;
     timer--;
-    if (timer === 0 || currentQuiz === codeQuizData.length) {
+    if (timer <= 0 || currentQuiz === codeQuizData.length) {
       clearInterval(timerinterval);
       quiz.style.display = "none";
       flipInner.style.display = "none";
