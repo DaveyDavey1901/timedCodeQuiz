@@ -69,3 +69,6 @@ i always like to run the Lighthouse in Dev tools to see if there is any tips for
 
 I may come back and expand on this.  i'm thinking adding different catagories to choose from HTML, CSS, JavaScipt, Node etc.  maybe look at some animations with keyframes for answering questions correctly, Getting a wrong answer, finishing the quiz, and maybe Achieving a top score.  
 
+## License
+
+[MIT License](LICENSE)
